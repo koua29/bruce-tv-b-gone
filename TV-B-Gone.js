@@ -94,8 +94,8 @@ if (!IR){
         var lbl = loop ? ("boucle - passe "+pass) : ("passe "+pass+"/"+maxPass);
         for (var k=0;k<wtotal;k++){
           if (keyboard.getEscPress()){ stop=true; break; }
-          storage.write(TMP, HDR + work[k].text, "write");   // 1 code -> fichier temp
-          ir.transmitFile(TMP, true);                         // ...envoye
+          storage.write(TMP, HDR + work[k].text + "\n#\n", "write");   // 1 code + terminateur "#" (sinon txIrFile n'emet pas !)
+          ir.transmitFile(TMP, true);                                   // ...envoye
           progress(lbl, k+1, wtotal, work[k].brand);          // anneau + % + marque
         }
         if (stop) break;
