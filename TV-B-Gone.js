@@ -88,9 +88,10 @@ if (!IR){
     else {
       keyboard.getEscPress();
       var wtotal=work.length, pass=0, stop=false;
+      var maxPass = (wtotal > 40) ? 1 : PASSES;   // grosse base (NA/EU/toutes) = 1 passe
       do {
         pass++;
-        var lbl = loop ? ("boucle - passe "+pass) : ("passe "+pass+"/"+PASSES);
+        var lbl = loop ? ("boucle - passe "+pass) : ("passe "+pass+"/"+maxPass);
         for (var k=0;k<wtotal;k++){
           if (keyboard.getEscPress()){ stop=true; break; }
           storage.write(TMP, HDR + work[k].text, "write");   // 1 code -> fichier temp
@@ -98,7 +99,7 @@ if (!IR){
           progress(lbl, k+1, wtotal, work[k].brand);          // anneau + % + marque
         }
         if (stop) break;
-      } while (loop || pass < PASSES);
+      } while (loop || pass < maxPass);
 
       try { storage.remove(TMP); } catch(e){}
       head(stop ? "STOP" : "TERMINE");

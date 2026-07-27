@@ -10,10 +10,12 @@ Un **TV-B-Gone** en JavaScript pour le firmware **[Bruce](https://github.com/Bru
 
 ## ✨ Fonctionnalités
 
-- **Base de 46 codes POWER** multi-marques (Samsung, LG, Sony, Panasonic, Philips, Sharp, Toshiba, TCL, RCA, Dynex, Android, CCE…).
-- **Anneau de progression** qui se remplit + **%** + **marque en cours** (envoi code par code).
-- **Deux modes** : **toutes les marques** (blast x3) ou **un modèle précis** (menu marque). Option **Boucle** jusqu'à ESC.
+- **~300 codes POWER** = la **base TV-B-Gone complète** (`WORLD_IR_CODES` NA + EU, convertie en `.ir`) **+** des codes de marque (Samsung, LG, Sony, Panasonic, Philips, Sharp, Toshiba, TCL, RCA…). **Même couverture que le TV-B-Gone natif de Bruce.**
+- **Anneau de progression** qui se remplit + **%** + **marque/région en cours** (envoi code par code).
+- **Modes** : **toutes** · **région NA** ou **EU** · **une marque précise** (menu). Option **Boucle** jusqu'à ESC.
 - **ESC** réactif (testé entre chaque code).
+
+> ⚙️ **Si rien ne s'éteint** : vérifie dans **Config → IR** que le **pin TX = « Default »** (la LED IR du T-Embed CC1101 est sur ce pin, pas 43/44), et éventuellement monte les **répétitions IR**. Le script utilise le même pin/réglages que le TV-B-Gone natif. L'IR est **directionnel** : vise bien la TV, d'assez près.
 
 | Menu | Progression |
 |------|-------------|
