@@ -1,0 +1,47 @@
+# 📺🔴 TV-B-Gone — pour Bruce
+
+[![Bruce firmware](https://img.shields.io/badge/firmware-Bruce-8A2BE2?logo=github)](https://github.com/BruceDevices/firmware) [![Device](https://img.shields.io/badge/device-LilyGO%20T--Embed%20CC1101-1E90FF)](https://github.com/BruceDevices/firmware) [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
+> **EN** — A TV-B-Gone written in JavaScript for the **[Bruce firmware](https://github.com/BruceDevices/firmware)** (LilyGO T-Embed CC1101). It blasts a database of infrared **POWER** codes from many TV brands to switch off (almost) any TV. Sends codes one by one with a **progress ring + % + current brand**, and can target **all brands** or **one specific model**.
+
+Un **TV-B-Gone** en JavaScript pour le firmware **[Bruce](https://github.com/BruceDevices/firmware)** (testé sur **LilyGO T-Embed CC1101**). Il envoie une base de codes infrarouge **POWER** multi-marques pour **éteindre (presque) n'importe quelle TV**. Les codes partent **un par un** avec un **anneau de progression + % + marque en cours**, en visant **toutes les marques** ou **un modèle précis**.
+
+![TV-B-Gone en action](docs/hero.jpg)
+
+## ✨ Fonctionnalités
+
+- **Base de 46 codes POWER** multi-marques (Samsung, LG, Sony, Panasonic, Philips, Sharp, Toshiba, TCL, RCA, Dynex, Android, CCE…).
+- **Anneau de progression** qui se remplit + **%** + **marque en cours** (envoi code par code).
+- **Deux modes** : **toutes les marques** (blast x3) ou **un modèle précis** (menu marque). Option **Boucle** jusqu'à ESC.
+- **ESC** réactif (testé entre chaque code).
+
+| Menu | Progression |
+|------|-------------|
+| ![menu](docs/menu.jpg) | ![progress](docs/progress.jpg) |
+
+## 🚀 Installation
+
+1. Copie **`TV-B-Gone.js`** **ET** **`tvbgone.ir`** sur la SD, dans un dossier lu par Bruce : **`/scripts`**, `/BruceJS` ou `/BruceScripts` (les deux fichiers ensemble).
+2. Sur l'appareil : **JS Interpreter** → lance `TV-B-Gone.js`.
+3. Choisis le mode, **vise la TV** avec l'émetteur IR, laisse tourner. **ESC** pour stopper.
+
+Le script cherche `tvbgone.ir` automatiquement dans `/scripts`, `/BruceScripts`, `/BruceJS` et à la racine.
+
+## 🔧 Étendre la base
+
+`tvbgone.ir` est un fichier IR au format Flipper (`name: … / protocol / address / command`). Tu peux y ajouter d'autres codes POWER (extraits de la base IR de Bruce ou d'ailleurs) : ajoute un bloc `name: Marque Pwr` et il apparaîtra dans le menu « Choisir un modèle ».
+
+## 📝 Notes
+
+- L'**infrarouge est directionnel et à sens unique** : vise la TV, et l'appareil **ne sait pas** si elle a réagi — **regarde l'écran de la TV**.
+- **Bruce a aussi un TV-B-Gone natif** (menu IR) — ceci est la version **script** (UI de progression, ciblage par marque, extensible, publiable).
+- Codes extraits de la **base IR embarquée de Bruce**.
+- 🤝 Pour rire / usage responsable (ta TV, un pote consentant…).
+
+## ☕ Un café ?
+
+<img src="docs/paypal-qr.png" width="180" alt="PayPal" />
+
+## 📄 Licence
+
+MIT — voir [LICENSE](LICENSE). Par **koua29** (Arnaud).
