@@ -56,4 +56,4 @@ Le matériel utilisé pour ce projet — liens affiliés Amazon :
 
 ## 📄 Licence
 
-MIT — voir [LICENSE](LICENSE). Par **koua29** (Arnaud).
+MIT — voir [LICENSE](LICENSE). Par **koua29**.
